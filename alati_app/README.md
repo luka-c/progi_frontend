@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+Ovo je drugi commit za ivana
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
