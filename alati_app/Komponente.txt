@@ -1,0 +1,16 @@
+Potrebno napraviti sljedeće komponente:
+
+1.Oglas
+2.Lista oglasa
+3.Registracija
+4.Komentar
+5.Lista komentara
+6.Stranica oglas
+    1.Slika
+    2.Opis
+    3.Kontakt
+    4.Informacije o alatu
+7.Filteri
+8.Search
+9.Kategorije
+
