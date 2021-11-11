@@ -1,8 +1,9 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Routes} from 'react-router-dom';
 import Header from './Header';
 import Login from './Components/Login';
+import Routess from './routes';
 
 function App() {
 
@@ -43,10 +44,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header onLogout={onLogut}/>
-      <div className="App">
-        Pozdrav Svijete!
-      </div>
+      <Routess />
     </BrowserRouter>
 
   );

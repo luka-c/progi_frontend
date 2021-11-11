@@ -1,10 +1,12 @@
 import React from 'react';
 import Card from "./Card";
 import './Login.css';
+import { BrowserRouter, useHistory } from 'react-router-dom';
 
 function Login(props) {
   const [loginForm, setLoginForm] = React.useState({ username: '', password: ''});
   const [error, setError] = React.useState('');
+  const history = useHistory();
 
   function onChange(event) {
     const {name, value} = event.target;
@@ -31,25 +33,30 @@ function Login(props) {
         }
       });
   }
+  const onRegister =() => {
+    history.push("/register");
+  }
 
   return (
-    <Card>
-      <div className="Login">
-        <form onSubmit={onSubmit}>
-          <div className="FormRow">
-            <label>Username</label>
-            <input name='username' onChange={onChange} value={loginForm.username}/>
-          </div>
-          <div className="FormRow">
-            <label>Password</label>
-            <input name='password' type="password" onChange={onChange} value={loginForm.password}/>
-          </div>
-          <div className='error'>{error}</div>
-          <button type="submit">Login</button>
-          <button type="button">Register</button>
-        </form>
-      </div>
-    </Card>
+    <BrowserRouter>
+      <Card>
+        <div className="Login">
+          <form>
+            <div className="FormRow">
+              <label>Username</label>
+              <input name='username' onChange={onChange} value={loginForm.username}/>
+            </div>
+            <div className="FormRow">
+              <label>Password</label>
+              <input name='password' type="password" onChange={onChange} value={loginForm.password}/>
+            </div>
+            <div className='error'>{error}</div>
+            <button type="submit" onSubmit="onSubmit">Login</button>
+            <button type="button" onClick={onRegister}>Register</button>
+          </form>
+        </div>
+      </Card>
+    </BrowserRouter>
   )
 }
 
